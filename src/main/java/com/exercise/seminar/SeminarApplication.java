@@ -4,9 +4,11 @@ import java.util.Scanner;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+//@SpringBootApplication
 public class SeminarApplication {
 
 	public static void main(String[] args) {
+//		SpringApplication.run(SeminarApplication.class, args);
 		Scanner sc = new Scanner(System.in);
 		String questionInput = "Enter filename: ";
 		String filePath;
