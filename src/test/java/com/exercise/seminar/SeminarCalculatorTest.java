@@ -13,11 +13,13 @@ class SeminarCalculatorTest {
 
     private SeminarCalculator seminarCalculator;
     private BlockingQueue<String> dataQueue;
+    private String filePath;
 
     @BeforeEach
     void setUp() {
         dataQueue = new LinkedBlockingQueue<>();
-        seminarCalculator = new SeminarCalculator(dataQueue);
+        filePath = "src/main/java/com/exercise/seminar/file/input.txt";
+        seminarCalculator = new SeminarCalculator(dataQueue ,new QueueProducer(filePath, dataQueue));
     }
 
     @Test
@@ -27,6 +29,15 @@ class SeminarCalculatorTest {
 
         assertTrue(seminarCalculator.isNineAM(nineAM));
         assertFalse(seminarCalculator.isNineAM(notNineAM));
+    }
+
+    @Test
+    void testIsMatchPattern() {
+        String line = "Sit Down and Write 30min";
+        String wrongLine = "Sit Down and Write";
+
+        assertTrue(seminarCalculator.isMatchPattern(line));
+        assertFalse(seminarCalculator.isMatchPattern(wrongLine));
     }
 
     @Test
@@ -48,10 +59,20 @@ class SeminarCalculatorTest {
     }
 
     @Test
+    void testIsLastIndexAndEndDay() {
+        LocalDateTime networkingTime = LocalDateTime.of(2023, 10, 10, 13, 0);
+        LocalDateTime notNetworkingTime = LocalDateTime.of(2023, 10, 10, 16, 0);
+
+        assertTrue(seminarCalculator.isLastIndexAndEndDay(networkingTime));
+        assertFalse(seminarCalculator.isLastIndexAndEndDay(notNetworkingTime));
+    }
+
+    @Test
     void testFormatToThaiBuddhistDate() {
         LocalDateTime dateTime = LocalDateTime.of(2023, 10, 10, 9, 0);
         String expectedDate = "10/10/2566";
 
         assertEquals(expectedDate, SeminarCalculator.changeThaiBuddhistFormat(dateTime));
     }
+
 }

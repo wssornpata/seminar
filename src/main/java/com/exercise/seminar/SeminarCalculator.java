@@ -20,14 +20,15 @@ public class SeminarCalculator {
     private final String timePattern = "hh:mma";
 
     private final FileManager fileManager;
+    private final QueueProducer queueProducer;
     private final DateTimeFormatter dateTimeformatter;
     private final DateTimeFormatter timeFormatter;
     private final Pattern minutePattern;
     private Matcher minuteMatcher;
-    private boolean isExpect;
 
-    public SeminarCalculator(BlockingQueue<String> dataQueue) {
+    public SeminarCalculator(BlockingQueue<String> dataQueue, QueueProducer queueProducer) {
         this.dataQueue = dataQueue;
+        this.queueProducer = queueProducer;
         this.fileManager = new FileManager();
         this.minutePattern = Pattern.compile(minRegex);
         this.dateTimeformatter = DateTimeFormatter.ofPattern(datePattern);
@@ -71,7 +72,7 @@ public class SeminarCalculator {
                         seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
                     } else {
                         appendSeminarDetail(timeline, seminarDateTime, line);
-                        if(dataQueue.size() == 0){
+                        if(isLastIndexAndEndDay(newDateTime)){
                             appendNetworkingEvent(timeline, newDateTime);
                         }
                         seminarDateTime = newDateTime;
@@ -122,17 +123,21 @@ public class SeminarCalculator {
         timeline.append(getTime(dateTime)).append(" Networking Event").append("\n");
     }
 
-    private boolean isMatchPattern(String line) {
+    public boolean isMatchPattern(String line) {
         minuteMatcher = minutePattern.matcher(line);
         return  minuteMatcher.find();
     }
 
-    boolean isLunch(LocalDateTime newDateTime) {
+    public boolean isLunch(LocalDateTime newDateTime) {
         return (newDateTime.getHour() >= 12 && newDateTime.getHour() < 13);
     }
 
-    boolean isNetworkingEvent(LocalDateTime newDateTime) {
+    public boolean isNetworkingEvent(LocalDateTime newDateTime) {
         return (newDateTime.getHour() > 16);
+    }
+
+    public boolean isLastIndexAndEndDay(LocalDateTime newDateTime) {
+        return (dataQueue.size() == 0 && newDateTime.getHour() >= 16);
     }
 
     public static String changeThaiBuddhistFormat(LocalDateTime dateTime) {

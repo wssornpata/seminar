@@ -22,7 +22,7 @@ public class SeminarApplication {
 			try {
 				QueueProducer queueProducer = new QueueProducer(filePath, dataQueue);
 				queueProducer.start();
-				seminarCalculator = new SeminarCalculator(dataQueue);
+				seminarCalculator = new SeminarCalculator(dataQueue, queueProducer);
 //				seminarCalculator.calculateSeminar();
 				System.out.println(seminarCalculator.calculateSeminar());
 			} catch (Exception e) {
