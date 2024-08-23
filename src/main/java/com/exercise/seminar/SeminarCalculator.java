@@ -24,6 +24,7 @@ public class SeminarCalculator {
     private final DateTimeFormatter timeFormatter;
     private final Pattern minutePattern;
     private Matcher minuteMatcher;
+    private boolean isExpect;
 
     public SeminarCalculator(BlockingQueue<String> dataQueue) {
         this.dataQueue = dataQueue;
@@ -63,13 +64,11 @@ public class SeminarCalculator {
                     } else if (isNetworkingEvent(newDateTime)) {
                         if ((newDateTime.getHour() >= 17 && newDateTime.getMinute() > 0)) {
                             appendNetworkingEvent(timeline, seminarDateTime);
-                            seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
-                            appendSeminarDetail(timeline, seminarDateTime, line);
                         } else {
                             appendSeminarDetail(timeline, seminarDateTime, line);
-                            appendNetworkingEvent(timeline, seminarDateTime);
-                            seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
+                            appendNetworkingEvent(timeline, newDateTime);
                         }
+                        seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
                     } else {
                         appendSeminarDetail(timeline, seminarDateTime, line);
                         seminarDateTime = newDateTime;
@@ -113,7 +112,7 @@ public class SeminarCalculator {
 
     private void appendLunch(StringBuilder timeline) {
         LocalTime lunchTime = LocalTime.of(12, 0);
-        timeline.append(getTime(lunchTime)).append(" Lunch");
+        timeline.append(getTime(lunchTime)).append(" Lunch").append("\n");
     }
 
     private void appendNetworkingEvent(StringBuilder timeline, LocalDateTime dateTime) {
@@ -130,7 +129,7 @@ public class SeminarCalculator {
     }
 
     boolean isNetworkingEvent(LocalDateTime newDateTime) {
-        return (newDateTime.getHour() >= 17);
+        return (newDateTime.getHour() > 16);
     }
 
     public static String changeThaiBuddhistFormat(LocalDateTime dateTime) {
