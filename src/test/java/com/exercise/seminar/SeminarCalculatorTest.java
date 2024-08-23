@@ -59,12 +59,18 @@ class SeminarCalculatorTest {
     }
 
     @Test
-    void testIsLastIndexAndEndDay() {
-        LocalDateTime networkingTime = LocalDateTime.of(2023, 10, 10, 13, 0);
-        LocalDateTime notNetworkingTime = LocalDateTime.of(2023, 10, 10, 16, 0);
+    void testIsLastIndexAndEndDay() throws InterruptedException {
+        LocalDateTime networkingTime = LocalDateTime.of(2023, 10, 10, 16, 0);
+        LocalDateTime notNetworkingTime = LocalDateTime.of(2023, 10, 10, 13, 0);
 
-        assertTrue(seminarCalculator.isLastIndexAndEndDay(networkingTime));
+        //size = 1
+        dataQueue.put( "Pair Programming vs Noise 45min");
+        assertFalse(seminarCalculator.isLastIndexAndEndDay(networkingTime));
         assertFalse(seminarCalculator.isLastIndexAndEndDay(notNetworkingTime));
+        //size = 0
+        dataQueue.take();
+        assertFalse(seminarCalculator.isLastIndexAndEndDay(notNetworkingTime));
+        assertTrue(seminarCalculator.isLastIndexAndEndDay(networkingTime));
     }
 
     @Test
