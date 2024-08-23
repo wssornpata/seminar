@@ -1,6 +1,5 @@
 package com.exercise.seminar;
 
-import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -61,15 +60,15 @@ public class SeminarCalculator {
                     if (isLunch(newDateTime)) {
                         appendSeminarDetail(timeline, seminarDateTime, line);
                         appendLunch(timeline);
-                        seminarDateTime = seminarDateTime.withHour(13).withMinute(0);
+                        seminarDateTime = setToAfternoon(seminarDateTime);
                     } else if (isNetworkingEvent(newDateTime)) {
-                        if ((newDateTime.getHour() >= 17 && newDateTime.getMinute() > 0)) {
+                        if (isAfterFivePM(newDateTime)) {
                             appendNetworkingEvent(timeline, seminarDateTime);
                         } else {
                             appendSeminarDetail(timeline, seminarDateTime, line);
                             appendNetworkingEvent(timeline, newDateTime);
                         }
-                        seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
+                        seminarDateTime = setToNextDay(seminarDateTime);
                     } else {
                         appendSeminarDetail(timeline, seminarDateTime, line);
                         if(isLastIndexAndEndDay(newDateTime)){
@@ -123,28 +122,32 @@ public class SeminarCalculator {
         timeline.append(getTime(dateTime)).append(" Networking Event").append("\n");
     }
 
-    public boolean isMatchPattern(String line) {
+    boolean isMatchPattern(String line) {
         minuteMatcher = minutePattern.matcher(line);
         return  minuteMatcher.find();
     }
 
-    public boolean isLunch(LocalDateTime newDateTime) {
+    boolean isLunch(LocalDateTime newDateTime) {
         return (newDateTime.getHour() >= 12 && newDateTime.getHour() < 13);
     }
 
-    public void setToAfternoon(LocalDateTime seminarDateTime) {
-
+    boolean isAfterFivePM(LocalDateTime newDateTime) {
+        return (newDateTime.getHour() >= 17 && newDateTime.getMinute() > 0);
     }
 
-    public void setToNextDay(LocalDateTime seminarDateTime) {
-
+    public LocalDateTime setToAfternoon(LocalDateTime seminarDateTime) {
+        return  seminarDateTime.withHour(13).withMinute(0);
     }
 
-    public boolean isNetworkingEvent(LocalDateTime newDateTime) {
+    public LocalDateTime setToNextDay(LocalDateTime seminarDateTime) {
+        return seminarDateTime.plusDays(1).withHour(9).withMinute(0);
+    }
+
+    boolean isNetworkingEvent(LocalDateTime newDateTime) {
         return (newDateTime.getHour() > 16);
     }
 
-    public boolean isLastIndexAndEndDay(LocalDateTime newDateTime) {
+    boolean isLastIndexAndEndDay(LocalDateTime newDateTime) {
         return (dataQueue.size() == 0 && newDateTime.getHour() >= 16);
     }
 

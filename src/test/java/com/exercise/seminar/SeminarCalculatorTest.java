@@ -59,18 +59,28 @@ class SeminarCalculatorTest {
     }
 
     @Test
+    void testIsMoreFivePM() {
+        LocalDateTime afterFivePM = LocalDateTime.of(2023, 10, 10, 17, 5);
+        LocalDateTime beforeFivePM = LocalDateTime.of(2023, 10, 10, 11, 0);
+
+        assertTrue(seminarCalculator.isAfterFivePM(afterFivePM));
+        assertFalse(seminarCalculator.isAfterFivePM(beforeFivePM));
+    }
+
+
+    @Test
     void testIsLastIndexAndEndDay() throws InterruptedException {
-        LocalDateTime networkingTime = LocalDateTime.of(2023, 10, 10, 16, 0);
-        LocalDateTime notNetworkingTime = LocalDateTime.of(2023, 10, 10, 13, 0);
+        LocalDateTime networkingEvent = LocalDateTime.of(2023, 10, 10, 16, 0);
+        LocalDateTime notNetworkingEvent = LocalDateTime.of(2023, 10, 10, 13, 0);
 
         //size = 1
         dataQueue.put( "Pair Programming vs Noise 45min");
-        assertFalse(seminarCalculator.isLastIndexAndEndDay(networkingTime));
-        assertFalse(seminarCalculator.isLastIndexAndEndDay(notNetworkingTime));
+        assertFalse(seminarCalculator.isLastIndexAndEndDay(networkingEvent));
+        assertFalse(seminarCalculator.isLastIndexAndEndDay(notNetworkingEvent));
         //size = 0
         dataQueue.take();
-        assertFalse(seminarCalculator.isLastIndexAndEndDay(notNetworkingTime));
-        assertTrue(seminarCalculator.isLastIndexAndEndDay(networkingTime));
+        assertFalse(seminarCalculator.isLastIndexAndEndDay(notNetworkingEvent));
+        assertTrue(seminarCalculator.isLastIndexAndEndDay(networkingEvent));
     }
 
     @Test
