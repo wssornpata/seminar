@@ -33,7 +33,7 @@ public class SeminarCalculator {
         this.timeFormatter =DateTimeFormatter.ofPattern(timePattern);
     }
 
-    public void calculateSeminar() {
+    public String calculateSeminar() {
         StringBuilder timeline = new StringBuilder();
         int countDay = 1;
         try {
@@ -46,33 +46,32 @@ public class SeminarCalculator {
             while (!dataQueue.isEmpty()) {
                 line = dataQueue.take();
                 if (isMatchPattern(line) && !line.isEmpty()) {
-                    timeline.setLength(0);
+//                    timeline.setLength(0);
 
                     if(isNineAM(seminarDateTime)){
-                        timeline.append("Day ").append(countDay).append(" - ").append(chageToBuddhaFormat(seminarDateTime)).append("\n");
+                        timeline.append("Day ").append(countDay).append(" - ").append(changeThaiBuddhistFormat(seminarDateTime)).append("\n");
                         countDay++;
                     }
 
                     int minute = Integer.parseInt(minuteMatcher.group(1));
 
-                    timeline.append(getTime(seminarDateTime)).append(" ").append(line);
+                    appendSeminarDetail(timeline, seminarDateTime, line);
 
                     LocalDateTime newDateTime = seminarDateTime.plusMinutes(minute);
 
                     if (isLunch(newDateTime)) {
-                        LocalTime lunchTime = LocalTime.of(12, 0);
-                        timeline.append("\n").append(getTime(lunchTime)).append(" Lunch");
+                        appendLunch(timeline);
                         seminarDateTime = seminarDateTime.withHour(13).withMinute(0);
                     } else {
                         seminarDateTime = newDateTime;
                     }
 
                     if (isNetworkingEvent(newDateTime)) {
-                        timeline.append("\n").append(getTime(newDateTime)).append(" Networking Event");
+                        appendNetworkingEvent(timeline, newDateTime);
                         seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
                     }
 
-                    fileManager.appendToSeminarFile(timeline.toString());
+//                    fileManager.appendToSeminarFile(timeline.toString());
 
                     while (seminarDateTime.getDayOfWeek() == DayOfWeek.SATURDAY || seminarDateTime.getDayOfWeek() == DayOfWeek.SUNDAY) {
                         seminarDateTime = seminarDateTime.plusDays(1);
@@ -84,9 +83,8 @@ public class SeminarCalculator {
             System.out.println("Invalid date format: " + e.getMessage());
         } catch (InterruptedException e) {
             System.out.println("Thread was interrupted: " + e.getMessage());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
+        return timeline.toString();
     }
 
     boolean isNineAM(LocalDateTime time) {
@@ -99,6 +97,19 @@ public class SeminarCalculator {
 
     private String getTime(LocalTime time) {
         return time.format(timeFormatter);
+    }
+
+    private void appendSeminarDetail(StringBuilder timeline, LocalDateTime seminarDateTime, String line) {
+        timeline.append(getTime(seminarDateTime)).append(" ").append(line).append("\n");
+    }
+
+    private void appendLunch(StringBuilder timeline) {
+        LocalTime lunchTime = LocalTime.of(12, 0);
+        timeline.append("\n").append(getTime(lunchTime)).append(" Lunch");
+    }
+
+    private void appendNetworkingEvent(StringBuilder timeline, LocalDateTime dateTime) {
+        timeline.append("\n").append(getTime(dateTime)).append(" Networking Event").append("\n");
     }
 
     private boolean isMatchPattern(String line) {
@@ -114,10 +125,9 @@ public class SeminarCalculator {
         return (newDateTime.getHour() >= 17);
     }
 
-    public static String chageToBuddhaFormat(LocalDateTime dateTime) {
+    public static String changeThaiBuddhistFormat(LocalDateTime dateTime) {
         ThaiBuddhistDate thaiBuddhistDate = ThaiBuddhistDate.from(dateTime);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return formatter.format(thaiBuddhistDate);
     }
-
 }

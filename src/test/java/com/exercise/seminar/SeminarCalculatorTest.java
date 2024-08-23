@@ -52,6 +52,6 @@ class SeminarCalculatorTest {
         LocalDateTime dateTime = LocalDateTime.of(2023, 10, 10, 9, 0);
         String expectedDate = "10/10/2566";
 
-        assertEquals(expectedDate, SeminarCalculator.chageToBuddhaFormat(dateTime));
+        assertEquals(expectedDate, SeminarCalculator.changeThaiBuddhistFormat(dateTime));
     }
 }

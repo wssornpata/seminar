@@ -23,7 +23,8 @@ public class SeminarApplication {
 				QueueProducer queueProducer = new QueueProducer(filePath, dataQueue);
 				queueProducer.start();
 				seminarCalculator = new SeminarCalculator(dataQueue);
-				seminarCalculator.calculateSeminar();
+//				seminarCalculator.calculateSeminar();
+				System.out.println(seminarCalculator.calculateSeminar());
 			} catch (Exception e) {
 				System.out.println("Error: " + e.getMessage());
 			}

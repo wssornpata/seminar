@@ -40,8 +40,4 @@ public class QueueProducer extends Thread {
         }
         System.out.println("Producer finished");
     }
-
-    public void stopProducer() {
-        this.running = false;
-    }
 }
