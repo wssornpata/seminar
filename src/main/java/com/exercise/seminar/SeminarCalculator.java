@@ -37,14 +37,15 @@ public class SeminarCalculator {
         StringBuilder timeline = new StringBuilder();
         int countDay = 1;
         try {
-            Thread.sleep(500);
+            Thread.sleep(100);
 
             String date = dataQueue.poll();
             LocalDateTime seminarDateTime = LocalDate.parse(date, dateTimeformatter).atTime(9, 0);
 
             String line;
-            while ((line = dataQueue.poll()) != null) {
-                if (isMatch(line)) {
+            while (!dataQueue.isEmpty()) {
+                line = dataQueue.take();
+                if (isMatchPattern(line) && !line.isEmpty()) {
                     timeline.setLength(0);
 
                     if(isNineAM(seminarDateTime)){
@@ -100,7 +101,7 @@ public class SeminarCalculator {
         return time.format(timeFormatter);
     }
 
-    private boolean isMatch(String line) {
+    private boolean isMatchPattern(String line) {
         minuteMatcher = minutePattern.matcher(line);
         return  minuteMatcher.find();
     }

@@ -1,0 +1,240 @@
+Day 1 - 25/02/2565
+09:00AM Writing Fast Tests Against Enterprise Rails 60min
+10:00AM Overdoing it in Python 45min
+10:45AM Lua for the Masses 30min
+11:15AM Ruby Errors from Mismatched Gem Versions 45min
+12:00PM Lunch
+01:00PM Ruby on Rails: Why We Should Move On 60min
+02:00PM Common Ruby Errors 45min
+02:45PM Pair Programming vs Noise 45min
+03:30PM Programming in the Boondocks of Seattle 30min
+04:00PM Ruby vs. Clojure for Back-End Development 30min
+04:30PM User Interface CSS in Rails Apps 30min
+05:00PM Networking Event
+Day 2 - 28/02/2565
+09:00AM Communicating Over Distance 60min
+10:00AM Rails Magic 60min
+11:00AM Woah 30min
+11:30AM Sit Down and Write 30min
+12:00PM Lunch
+01:00PM Accounting-Driven Development 45min
+01:45PM Clojure Ate Scala (on my project) 45min
+02:30PM A World Without HackerNews 30min
+03:00PM Ruby on Rails Legacy App Maintenance 60min
+04:00PM Rails for Python Developers 5min
+04:05PM Ruby on Rails: Why We Should Move On 60min
+05:05PM Networking Event
+Day 3 - 01/03/2565
+09:00AM Common Ruby Errors 45min
+09:45AM Pair Programming vs Noise 45min
+10:30AM Programming in the Boondocks of Seattle 30min
+11:00AM Ruby vs. Clojure for Back-End Development 30min
+11:30AM User Interface CSS in Rails Apps 30min
+12:00PM Lunch
+01:00PM Communicating Over Distance 60min
+02:00PM Rails Magic 60min
+03:00PM Woah 30min
+03:30PM Sit Down and Write 30min
+04:00PM Accounting-Driven Development 45min
+04:45PM Clojure Ate Scala (on my project) 45min
+05:30PM Networking Event
+Day 4 - 02/03/2565
+09:00AM A World Without HackerNews 30min
+09:30AM Ruby on Rails Legacy App Maintenance 60min
+10:30AM Rails for Python Developers 5min
+10:35AM Lua for the Masses 30min
+11:05AM Ruby Errors from Mismatched Gem Versions 45min
+11:50AM Ruby on Rails: Why We Should Move On 60min
+12:00PM Lunch
+01:00PM Common Ruby Errors 45min
+01:45PM Pair Programming vs Noise 45min
+02:30PM Programming in the Boondocks of Seattle 30min
+03:00PM Ruby vs. Clojure for Back-End Development 30min
+03:30PM User Interface CSS in Rails Apps 30min
+04:00PM Communicating Over Distance 60min
+05:00PM Networking Event
+Day 5 - 03/03/2565
+09:00AM Rails Magic 60min
+10:00AM Woah 30min
+10:30AM Sit Down and Write 30min
+11:00AM Accounting-Driven Development 45min
+Day 1 - 25/02/2565
+09:00AM Writing Fast Tests Against Enterprise Rails 60min
+10:00AM Overdoing it in Python 45min
+10:45AM Lua for the Masses 30min
+11:15AM Ruby Errors from Mismatched Gem Versions 45min
+12:00PM Lunch
+01:00PM Ruby on Rails: Why We Should Move On 60min
+02:00PM Common Ruby Errors 45min
+02:45PM Pair Programming vs Noise 45min
+03:30PM Programming in the Boondocks of Seattle 30min
+04:00PM Ruby vs. Clojure for Back-End Development 30min
+04:30PM User Interface CSS in Rails Apps 30min
+05:00PM Networking Event
+Day 2 - 28/02/2565
+09:00AM Communicating Over Distance 60min
+10:00AM Rails Magic 60min
+11:00AM Woah 30min
+11:30AM Sit Down and Write 30min
+12:00PM Lunch
+01:00PM Accounting-Driven Development 45min
+01:45PM Clojure Ate Scala (on my project) 45min
+02:30PM A World Without HackerNews 30min
+03:00PM Ruby on Rails Legacy App Maintenance 60min
+04:00PM Rails for Python Developers 5min
+04:05PM Ruby on Rails: Why We Should Move On 60min
+05:05PM Networking Event
+Day 3 - 01/03/2565
+09:00AM Common Ruby Errors 45min
+09:45AM Pair Programming vs Noise 45min
+10:30AM Programming in the Boondocks of Seattle 30min
+11:00AM Ruby vs. Clojure for Back-End Development 30min
+11:30AM User Interface CSS in Rails Apps 30min
+12:00PM Lunch
+01:00PM Communicating Over Distance 60min
+02:00PM Rails Magic 60min
+03:00PM Woah 30min
+03:30PM Sit Down and Write 30min
+04:00PM Accounting-Driven Development 45min
+04:45PM Clojure Ate Scala (on my project) 45min
+05:30PM Networking Event
+Day 4 - 02/03/2565
+09:00AM A World Without HackerNews 30min
+09:30AM Ruby on Rails Legacy App Maintenance 60min
+10:30AM Rails for Python Developers 5min
+10:35AM Lua for the Masses 30min
+11:05AM Ruby Errors from Mismatched Gem Versions 45min
+11:50AM Ruby on Rails: Why We Should Move On 60min
+12:00PM Lunch
+01:00PM Common Ruby Errors 45min
+01:45PM Pair Programming vs Noise 45min
+02:30PM Programming in the Boondocks of Seattle 30min
+03:00PM Ruby vs. Clojure for Back-End Development 30min
+03:30PM User Interface CSS in Rails Apps 30min
+04:00PM Communicating Over Distance 60min
+05:00PM Networking Event
+Day 5 - 03/03/2565
+09:00AM Rails Magic 60min
+10:00AM Woah 30min
+10:30AM Sit Down and Write 30min
+11:00AM Accounting-Driven Development 45min
+Day 1 - 25/02/2565
+09:00AM Writing Fast Tests Against Enterprise Rails 60min
+10:00AM Overdoing it in Python 45min
+10:45AM Lua for the Masses 30min
+11:15AM Ruby Errors from Mismatched Gem Versions 45min
+12:00PM Lunch
+01:00PM Ruby on Rails: Why We Should Move On 60min
+02:00PM Common Ruby Errors 45min
+02:45PM Pair Programming vs Noise 45min
+03:30PM Programming in the Boondocks of Seattle 30min
+04:00PM Ruby vs. Clojure for Back-End Development 30min
+04:30PM User Interface CSS in Rails Apps 30min
+05:00PM Networking Event
+Day 2 - 28/02/2565
+09:00AM Communicating Over Distance 60min
+10:00AM Rails Magic 60min
+11:00AM Woah 30min
+11:30AM Sit Down and Write 30min
+12:00PM Lunch
+01:00PM Accounting-Driven Development 45min
+01:45PM Clojure Ate Scala (on my project) 45min
+02:30PM A World Without HackerNews 30min
+03:00PM Ruby on Rails Legacy App Maintenance 60min
+04:00PM Rails for Python Developers 5min
+04:05PM Ruby on Rails: Why We Should Move On 60min
+05:05PM Networking Event
+Day 3 - 01/03/2565
+09:00AM Common Ruby Errors 45min
+09:45AM Pair Programming vs Noise 45min
+10:30AM Programming in the Boondocks of Seattle 30min
+11:00AM Ruby vs. Clojure for Back-End Development 30min
+11:30AM User Interface CSS in Rails Apps 30min
+12:00PM Lunch
+01:00PM Communicating Over Distance 60min
+02:00PM Rails Magic 60min
+03:00PM Woah 30min
+03:30PM Sit Down and Write 30min
+04:00PM Accounting-Driven Development 45min
+04:45PM Clojure Ate Scala (on my project) 45min
+05:30PM Networking Event
+Day 4 - 02/03/2565
+09:00AM A World Without HackerNews 30min
+09:30AM Ruby on Rails Legacy App Maintenance 60min
+10:30AM Rails for Python Developers 5min
+10:35AM Lua for the Masses 30min
+11:05AM Ruby Errors from Mismatched Gem Versions 45min
+11:50AM Ruby on Rails: Why We Should Move On 60min
+12:00PM Lunch
+01:00PM Common Ruby Errors 45min
+01:45PM Pair Programming vs Noise 45min
+02:30PM Programming in the Boondocks of Seattle 30min
+03:00PM Ruby vs. Clojure for Back-End Development 30min
+03:30PM User Interface CSS in Rails Apps 30min
+04:00PM Communicating Over Distance 60min
+05:00PM Networking Event
+Day 5 - 03/03/2565
+09:00AM Rails Magic 60min
+10:00AM Woah 30min
+10:30AM Sit Down and Write 30min
+11:00AM Accounting-Driven Development 45min
+Day 1 - 25/02/2565
+09:00AM Writing Fast Tests Against Enterprise Rails 60min
+10:00AM Overdoing it in Python 45min
+10:45AM Lua for the Masses 30min
+11:15AM Ruby Errors from Mismatched Gem Versions 45min
+12:00PM Lunch
+01:00PM Ruby on Rails: Why We Should Move On 60min
+02:00PM Common Ruby Errors 45min
+02:45PM Pair Programming vs Noise 45min
+03:30PM Programming in the Boondocks of Seattle 30min
+04:00PM Ruby vs. Clojure for Back-End Development 30min
+04:30PM User Interface CSS in Rails Apps 30min
+05:00PM Networking Event
+Day 2 - 28/02/2565
+09:00AM Communicating Over Distance 60min
+10:00AM Rails Magic 60min
+11:00AM Woah 30min
+11:30AM Sit Down and Write 30min
+12:00PM Lunch
+01:00PM Accounting-Driven Development 45min
+01:45PM Clojure Ate Scala (on my project) 45min
+02:30PM A World Without HackerNews 30min
+03:00PM Ruby on Rails Legacy App Maintenance 60min
+04:00PM Rails for Python Developers 5min
+04:05PM Ruby on Rails: Why We Should Move On 60min
+05:05PM Networking Event
+Day 3 - 01/03/2565
+09:00AM Common Ruby Errors 45min
+09:45AM Pair Programming vs Noise 45min
+10:30AM Programming in the Boondocks of Seattle 30min
+11:00AM Ruby vs. Clojure for Back-End Development 30min
+11:30AM User Interface CSS in Rails Apps 30min
+12:00PM Lunch
+01:00PM Communicating Over Distance 60min
+02:00PM Rails Magic 60min
+03:00PM Woah 30min
+03:30PM Sit Down and Write 30min
+04:00PM Accounting-Driven Development 45min
+04:45PM Clojure Ate Scala (on my project) 45min
+05:30PM Networking Event
+Day 4 - 02/03/2565
+09:00AM A World Without HackerNews 30min
+09:30AM Ruby on Rails Legacy App Maintenance 60min
+10:30AM Rails for Python Developers 5min
+10:35AM Lua for the Masses 30min
+11:05AM Ruby Errors from Mismatched Gem Versions 45min
+11:50AM Ruby on Rails: Why We Should Move On 60min
+12:00PM Lunch
+01:00PM Common Ruby Errors 45min
+01:45PM Pair Programming vs Noise 45min
+02:30PM Programming in the Boondocks of Seattle 30min
+03:00PM Ruby vs. Clojure for Back-End Development 30min
+03:30PM User Interface CSS in Rails Apps 30min
+04:00PM Communicating Over Distance 60min
+05:00PM Networking Event
+Day 5 - 03/03/2565
+09:00AM Rails Magic 60min
+10:00AM Woah 30min
+10:30AM Sit Down and Write 30min
+11:00AM Accounting-Driven Development 45min
