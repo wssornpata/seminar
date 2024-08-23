@@ -49,7 +49,7 @@ public class SeminarCalculator {
 //                    timeline.setLength(0);
 
                     if(isNineAM(seminarDateTime)){
-                        timeline.append("Day ").append(countDay).append(" - ").append(changeThaiBuddhistFormat(seminarDateTime)).append("\n");
+                        timeline.append("\n").append("Day ").append(countDay).append(" - ").append(changeThaiBuddhistFormat(seminarDateTime)).append("\n");
                         countDay++;
                     }
 
@@ -105,11 +105,11 @@ public class SeminarCalculator {
 
     private void appendLunch(StringBuilder timeline) {
         LocalTime lunchTime = LocalTime.of(12, 0);
-        timeline.append("\n").append(getTime(lunchTime)).append(" Lunch");
+        timeline.append(getTime(lunchTime)).append(" Lunch");
     }
 
     private void appendNetworkingEvent(StringBuilder timeline, LocalDateTime dateTime) {
-        timeline.append("\n").append(getTime(dateTime)).append(" Networking Event").append("\n");
+        timeline.append(getTime(dateTime)).append(" Networking Event").append("\n");
     }
 
     private boolean isMatchPattern(String line) {
