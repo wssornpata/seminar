@@ -61,7 +61,7 @@ public class SeminarCalculator {
                     if (isLunch(newDateTime)) {
                         appendSeminarDetail(timeline, seminarDateTime, line);
                         appendLunch(timeline);
-                        setToAfternoon(seminarDateTime);
+                        seminarDateTime = seminarDateTime.withHour(13).withMinute(0);
                     } else if (isNetworkingEvent(newDateTime)) {
                         if ((newDateTime.getHour() >= 17 && newDateTime.getMinute() > 0)) {
                             appendNetworkingEvent(timeline, seminarDateTime);
@@ -69,7 +69,7 @@ public class SeminarCalculator {
                             appendSeminarDetail(timeline, seminarDateTime, line);
                             appendNetworkingEvent(timeline, newDateTime);
                         }
-                        setToNextMorning(seminarDateTime);
+                        seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
                     } else {
                         appendSeminarDetail(timeline, seminarDateTime, line);
                         if(isLastIndexAndEndDay(newDateTime)){
@@ -133,11 +133,11 @@ public class SeminarCalculator {
     }
 
     public void setToAfternoon(LocalDateTime seminarDateTime) {
-        seminarDateTime.withHour(13).withMinute(0);
+
     }
 
-    public void setToNextMorning(LocalDateTime seminarDateTime) {
-        seminarDateTime.plusDays(1).withHour(9).withMinute(0);
+    public void setToNextDay(LocalDateTime seminarDateTime) {
+
     }
 
     public boolean isNetworkingEvent(LocalDateTime newDateTime) {
