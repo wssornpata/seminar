@@ -49,26 +49,30 @@ public class SeminarCalculator {
 //                    timeline.setLength(0);
 
                     if(isNineAM(seminarDateTime)){
-                        timeline.append("\n").append("Day ").append(countDay).append(" - ").append(changeThaiBuddhistFormat(seminarDateTime)).append("\n");
+                        appendDay(timeline, countDay, seminarDateTime);
                         countDay++;
                     }
 
                     int minute = Integer.parseInt(minuteMatcher.group(1));
-
-                    appendSeminarDetail(timeline, seminarDateTime, line);
-
                     LocalDateTime newDateTime = seminarDateTime.plusMinutes(minute);
 
                     if (isLunch(newDateTime)) {
+                        appendSeminarDetail(timeline, seminarDateTime, line);
                         appendLunch(timeline);
                         seminarDateTime = seminarDateTime.withHour(13).withMinute(0);
+                    } else if (isNetworkingEvent(newDateTime)) {
+                        if ((newDateTime.getHour() >= 17 && newDateTime.getMinute() > 0)) {
+                            appendNetworkingEvent(timeline, seminarDateTime);
+                            seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
+                            appendSeminarDetail(timeline, seminarDateTime, line);
+                        } else {
+                            appendSeminarDetail(timeline, seminarDateTime, line);
+                            appendNetworkingEvent(timeline, seminarDateTime);
+                            seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
+                        }
                     } else {
+                        appendSeminarDetail(timeline, seminarDateTime, line);
                         seminarDateTime = newDateTime;
-                    }
-
-                    if (isNetworkingEvent(newDateTime)) {
-                        appendNetworkingEvent(timeline, newDateTime);
-                        seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
                     }
 
 //                    fileManager.appendToSeminarFile(timeline.toString());
@@ -97,6 +101,10 @@ public class SeminarCalculator {
 
     private String getTime(LocalTime time) {
         return time.format(timeFormatter);
+    }
+
+    private void appendDay(StringBuilder timeline, int countDay, LocalDateTime seminarDateTime) {
+        timeline.append("\n").append("Day ").append(countDay).append(" - ").append(changeThaiBuddhistFormat(seminarDateTime)).append("\n");
     }
 
     private void appendSeminarDetail(StringBuilder timeline, LocalDateTime seminarDateTime, String line) {
