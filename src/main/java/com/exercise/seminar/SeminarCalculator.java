@@ -71,6 +71,9 @@ public class SeminarCalculator {
                         seminarDateTime = seminarDateTime.plusDays(1).withHour(9).withMinute(0);
                     } else {
                         appendSeminarDetail(timeline, seminarDateTime, line);
+                        if(dataQueue.size() == 0){
+                            appendNetworkingEvent(timeline, newDateTime);
+                        }
                         seminarDateTime = newDateTime;
                     }
 

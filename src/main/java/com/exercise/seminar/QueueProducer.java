@@ -11,6 +11,7 @@ public class QueueProducer extends Thread {
     private BlockingQueue<String> dataQueue;
     private String filePath;
     private boolean running = true;
+    private boolean finished = false;
 
     public QueueProducer(String filePath, BlockingQueue<String> dataQueue) {
         this.filePath = filePath;
@@ -38,6 +39,15 @@ public class QueueProducer extends Thread {
             System.out.println("Error: " + e.getMessage());
             this.running = false;
         }
+        finished = true;
         System.out.println("Producer finished");
+    }
+
+    public void stopProducer() {
+        this.running = false;
+    }
+
+    public boolean isFinished() {
+        return finished;
     }
 }
